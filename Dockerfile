@@ -55,9 +55,8 @@ RUN wget http://interactivebrokers.github.io/downloads/twsapi_macunix.973.07.zip
 RUN pip3 install ib_insync
 
 # Demo setup 
-RUN  apt-get install vim
-ADD demo.py demo.py
-
+RUN apt-get install -y vim \
+  && pip3 install -U jupyter numpy pandas
 WORKDIR /
 
 # Install TWS
@@ -70,4 +69,5 @@ RUN Xvfb :1 -screen 0 1024x768x24 2>&1 >/dev/null &
 RUN export DISPLAY=:1
 
 ADD runscript.sh runscript.sh
+ADD algorithm.py algorithm.py
 CMD bash runscript.sh
