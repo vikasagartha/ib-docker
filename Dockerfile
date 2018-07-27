@@ -54,6 +54,10 @@ RUN wget http://interactivebrokers.github.io/downloads/twsapi_macunix.973.07.zip
 # Install ib_insync
 RUN pip3 install ib_insync
 
+# Demo setup 
+RUN  apt-get install vim
+ADD demo.py demo.py
+
 WORKDIR /
 
 # Install TWS
