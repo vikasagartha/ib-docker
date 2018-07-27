@@ -1,5 +1,5 @@
 tws:
-  image: ryankennedyio/ib-docker
+  build: .
   ports:
     - "4003:4003"
     - "5900:5900"
